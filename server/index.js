@@ -4,7 +4,7 @@ import bodyParser from "body-parser"
 import dotenv from "dotenv"
 dotenv.config()
 
-import { db } from "./util/FirebaseInit.js";
+import { db } from "./utils/FirebaseInit.js";
 import { collection, getDocs, addDoc } from "firebase/firestore"
 
 const app = express()
@@ -19,8 +19,32 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get("/", (req, res) => {
-    res.send("Hello World");
+    res.send("Home Page");
 });
+
+app.get("/messages", async (req, res) => {
+    const messagesRef = collection(db, "messages");
+    const messagesSnap = await getDocs(messagesRef);
+
+    const messages = []
+	messagesSnap.forEach((msg) => {
+		messages.push(msg.data())
+	})
+	res.send(messages)
+})
+
+app.post("/messages", async (req, res) => {
+    const messagesRef = collection(db, "messages");
+    const newMessage = req.body;
+
+    try {
+		await addDoc(messagesRef, newMessage)
+	} catch (e) {
+		console.error(e)
+		res.status(500)
+	}
+	res.status(200).send("Successfully posted message")
+})
 
 function start() {
 	app.listen(port, () => {
