@@ -44,3 +44,27 @@
     background-color: var(--highlight);
     transform: scale(0.95);
 }
+
+.modal-button {
+    background-color: white;
+    color: var(--dark-primary);
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    outline-width: 2px;
+    outline-color: var(--dark-primary);
+    outline-style: solid;
+    padding: 5px;
+    cursor: url("/assets/cursorclick.png"), auto;
+    margin: 20px;
+    font-size: 20px;
+}
+
+.modal-button:active {
+    outline: var(--dark-primary);
+    background-color: var(--highlight);
+    color: var(--dark-primary);
+}
