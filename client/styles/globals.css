@@ -1,6 +1,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --dark-primary: #00525e;
+  --light-primary: #14cfeb;
+  --highlight: #65eb59;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +17,8 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  height: 100%;
+  cursor: url("/assets/cursornormal.png"), auto;
 }
 
 body {
@@ -40,3 +45,4 @@ a {
     color-scheme: dark;
   }
 }
+

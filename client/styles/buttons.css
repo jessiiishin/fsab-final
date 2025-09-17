@@ -1,0 +1,14 @@
+#start-button {
+    background-color: var(--light-primary);
+    color: white;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    outline-width: 2px;
+    outline-color: var(--dark-primary);
+    outline-style: solid;
+    padding: 5px;
+    cursor: url("/assets/cursorclick.png"), auto;
+}

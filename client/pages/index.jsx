@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import StartButton from "./startbutton";
 
 export default function Home() {
   return (
@@ -9,15 +10,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <div>
-        <Image src="/favicon.png" width={64} height={64}/>
-        <h1>
-          Hello World!
-        </h1>
-        <p>
-          Are you ready to say hello?
-        </p>
-        <button>Let's do it</button>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+        <div className="welcome">
+          <Image src="/favicon.png" width={64} height={64}/>
+          <h1 style={{ padding: "10px"}}>
+            Hello World!
+          </h1>
+          <p>
+            Are you ready to say hello?
+          </p>
+          <StartButton />
+        </div>
       </div>
     </>
   );
