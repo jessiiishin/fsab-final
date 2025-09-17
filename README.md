@@ -1,6 +1,9 @@
 # fsab-final
 
-run with:
+pls do "npm install", and "cd client && npm run build" in terminal
+then go back out to root with .. before running other commands below
+
+run all with:
 npm run start:all
 
 run dev with:
