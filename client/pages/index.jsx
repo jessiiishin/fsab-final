@@ -10,6 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <div>
+        <Image src="/favicon.png" width={64} height={64}/>
         <h1>
           Hello World!
         </h1>
