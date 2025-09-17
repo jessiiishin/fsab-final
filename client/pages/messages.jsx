@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Msg from "./msg";
+import NewMsgButton from "./newmsgbutton";
 
 export default function MessagesPage() {
     const [messages, setMessages] = useState([])
@@ -29,9 +30,8 @@ export default function MessagesPage() {
                     <Msg key={msg.id} title={msg.title} body={msg.body} time={msg.time} />
                 ))}
             </div>
+            <NewMsgButton />
         </div>
-        
-
     );
 }
 
