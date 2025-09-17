@@ -16,7 +16,7 @@ export default function Home() {
           <h1 style={{ padding: "10px"}}>
             Hello World!
           </h1>
-          <p>
+          <p style={{ fontSize: "36px" }}>
             Are you ready to say hello?
           </p>
           <StartButton />
