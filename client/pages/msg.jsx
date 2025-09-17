@@ -1,14 +1,10 @@
 import TimeStamp from "./timestamp";
 
-export default function msg({ title, author, body, time}) {
+export default function msg({ title, body, time}) {
     return (
-        <div>
-            <div>
-                <h1>{title}</h1>
-                <p>{author}</p>
-            </div>
-            <p>{body}</p>
-            <TimeStamp time={time}/>
+        <div id="msg">
+            <h1 className="msg-title">{title}</h1>
+            <p className="msg-body">{body}</p>
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Msg from "./msg";
 
 export default function MessagesPage() {
     const [messages, setMessages] = useState([])
@@ -18,9 +19,19 @@ export default function MessagesPage() {
     }, [])
 
     return (
-        <div>
-            <h1 style={{ padding: "20px"}}>The World says Hello!</h1>
+        <div style={{ height: "100vh", backgroundColor: "var(--dark-primary)", padding: "40px"}}>
+            <div style={{ marginBottom: "30px" }}>
+                <h1 style={{ color: "white"}}>The World says Hello :D</h1>
+            </div>
+
+            <div>
+                {messages.map((msg) => (
+                    <Msg key={msg.id} title={msg.title} body={msg.body} time={msg.time} />
+                ))}
+            </div>
         </div>
+        
+
     );
 }
 
