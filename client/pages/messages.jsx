@@ -37,12 +37,12 @@ export default function MessagesPage() {
     }, [])
 
     return (
-        <div style={{ height: "100vh", backgroundColor: "var(--dark-primary)", padding: "40px"}}>
-            <div style={{ marginBottom: "30px" }}>
+        <div style={{ display: "flex", flexDirection: "column", backgroundColor: "var(--dark-primary)", 
+        top: "0", left: "0", minHeight: "100vh", width: "100vw"}}>
+            <div style={{ margin: "40px" }}>
                 <h1 style={{ color: "white"}}>The World says Hello :D</h1>
             </div>
-
-            <div>
+            <div className="messages-page">
                 {messages.map((msg) => (
                     <Msg key={msg.id} title={msg.title} body={msg.body} time={msg.time} />
                 ))}
@@ -50,7 +50,7 @@ export default function MessagesPage() {
             <NewMsgButton onClick={() => setModalVisible(true)} />
                 {
                     showMsgModal && (
-                        <MessageModal
+                         <MessageModal
                             onClose={() => setModalVisible(false)}
                             onSend={async (title, body) => {
                                 await sendMessage(title, body);

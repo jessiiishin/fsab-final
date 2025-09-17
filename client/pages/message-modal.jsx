@@ -1,19 +1,33 @@
 import { useState } from "react";
 
-export default function MessageModal() {
+export default function MessageModal({ onClose, onSend }) {
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
+
     return (
         <div className="modal-overlay">
             <div className="modal-content">
-                <h1>Write a new message:</h1>
-                <input className="title-input" />
-                <textarea className="body-input" />
+                <textarea 
+                    className="title-input" 
+                    value={title}
+                    onChange={e => setTitle(e.target.value)}
+                    placeholder="Give it a title..."
+                    wrap="off"/>
+                <textarea 
+                    className="body-input" 
+                    value={body}
+                    onChange={e => setBody(e.target.value)}
+                    placeholder="Write your message..."/>
+                <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+                    <button className="modal-button" onClick={onClose}>
+                        Cancel
+                    </button>
+                    <button className="modal-button" onClick={() => onSend(title, body)}>
+                        Send!
+                    </button>
+                </div>
             </div>
-            <button className="modal-button">
-                Send!
-            </button>
-            <button className="modal-button">
-                Cancel
-            </button>
+            
         </div>
     )
 }
