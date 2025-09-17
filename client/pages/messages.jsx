@@ -19,7 +19,7 @@ export default function MessagesPage() {
 
     return (
         <div>
-            <h1>The World says Hello!</h1>
+            <h1 style={{ padding: "20px"}}>The World says Hello!</h1>
         </div>
     );
 }

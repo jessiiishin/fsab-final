@@ -1,7 +1,7 @@
 export default function startButton() {
     return (
-        <div id="start-button">
+        <button id="start-button" onClick={event =>  window.location.href='/messages'}>
             Let's do it
-        </div>
+        </button>
     )
 }

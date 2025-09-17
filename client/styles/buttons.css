@@ -1,14 +1,23 @@
 #start-button {
-    background-color: var(--light-primary);
-    color: white;
+    background-color: white;
+    color: var(--dark-primary);
     width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
     border-radius: 5px;
     outline-width: 2px;
     outline-color: var(--dark-primary);
     outline-style: solid;
     padding: 5px;
     cursor: url("/assets/cursorclick.png"), auto;
+    margin: 20px;
+    font-size: 20px;
+}
+
+#start-button:active {
+    outline: var(--dark-primary);
+    background-color: var(--dark-primary);
+    color: white;
 }

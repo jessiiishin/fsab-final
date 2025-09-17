@@ -19,14 +19,22 @@ body {
   overflow-x: hidden;
   height: 100%;
   cursor: url("/assets/cursornormal.png"), auto;
+  font-family: 'pixel';
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-family: 'pixel';
+}
+
+button {
+  font-family: 'pixel';
 }
 
 * {
@@ -46,3 +54,9 @@ a {
   }
 }
 
+@font-face {
+  font-family: 'pixel';
+  src: url('/fonts/MedodicaRegular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
